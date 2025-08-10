@@ -1,0 +1,23 @@
+{
+  "name": "Test Bot Template",
+  "prompt": "Create a trading bot - replace with your actual prompt",
+  "targetCoin": "ETH",
+  "swapConfig": {
+    "senderAddress": "YOUR_WALLET_ADDRESS_HERE",
+    "senderPrivateKey": "YOUR_PRIVATE_KEY_HERE",
+    "recipientAddress": "YOUR_RECIPIENT_ADDRESS_HERE",
+    "originSymbol": "USDC",
+    "originBlockchain": "POL",
+    "destinationSymbol": "ETH",
+    "destinationBlockchain": "BASE",
+    "amount": "1.0",
+    "isTest": true
+  },
+  "strategy": {
+    "type": "interval",
+    "parameters": {
+      "interval": "1m",
+      "targetCoin": "ETH"
+    }
+  }
+}

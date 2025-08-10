@@ -99,6 +99,6 @@ logs
 # Sensitive data files
 data/bots.json
 data/bots.json.backup
-test-bot-*.json
+test-bot-v*.json
 **/private-keys/**
 **/*private-key*
