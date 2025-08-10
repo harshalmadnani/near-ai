@@ -11,7 +11,7 @@ const NETWORKS = {
   ETHEREUM: { name: 'Ethereum', symbol: 'ETH' },
   BNB: { name: 'BNB Smart Chain', symbol: 'BNB' },
   AVAX: { name: 'Avalanche', symbol: 'AVAX' },
-  ARB: { name: 'Arbitrum', symbol: 'ETH' },
+  ARBITRUM: { name: 'Arbitrum', symbol: 'ETH' },
   POL: { name: 'Polygon', symbol: 'POL' },
   OPTIMISM: { name: 'Optimism', symbol: 'ETH' }
 };
@@ -57,9 +57,9 @@ const BOT_EXAMPLES = [
     prompt: "Create a range trading bot that buys 10 ARB every time its price is below $0.50 and sells when above $0.50 using USDC. Perfect for capturing price oscillations.",
     config: {
       originSymbol: "USDC",
-      originBlockchain: "ARB",
+      originBlockchain: "ARBITRUM",
       destinationSymbol: "ARB",
-      destinationBlockchain: "ARB",
+      destinationBlockchain: "ARBITRUM",
       amount: "5.0"
     }
   }
