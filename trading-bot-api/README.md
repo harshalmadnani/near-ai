@@ -1,11 +1,160 @@
 # AI Trading Bot API
 
-An AI-powered trading bot platform that uses OpenAI o3-mini to generate custom trading bots, monitors real-time price data via Mobula WebSocket, executes trades through NEAR Intents, and deploys bots to Vercel.
+An AI-powered trading bot platform that uses OpenAI o3-mini to generate custom trading bots, monitors real-time price data via Hyperliquid WebSocket, executes trades through NEAR Intents, and deploys bots to Vercel.
+
+## 🎯 What It Does
+
+The Trading Bot API is an **AI-powered automated trading platform** that creates, deploys, and manages custom trading bots across multiple blockchains. It combines cutting-edge technologies to provide a complete trading automation solution:
+
+### Core Functionality:
+1. **AI Bot Generation** - Uses OpenAI o3-mini to generate custom trading bot code from natural language prompts
+2. **Real-time Market Monitoring** - Connects to Hyperliquid WebSocket for live price data
+3. **Cross-chain Trading** - Executes swaps via NEAR Intents API across multiple blockchains  
+4. **Serverless Deployment** - Automatically deploys generated bots to Vercel as serverless functions
+5. **Strategy Management** - Supports various trading strategies (price thresholds, intervals, ranges, custom logic)
+6. **Performance Tracking** - Logs all trades and provides optimization suggestions
+
+## 🏗️ Technical Architecture
+
+The system follows a microservices architecture with the following key components:
+
+### Entry Points:
+- **`src/index.ts`** - Main TypeScript server with full bot management capabilities
+- **`enhanced-server.js`** - Enhanced JavaScript version with in-memory bot storage
+- **`simple-server.js`** - Minimal JavaScript version for basic testing
+
+### Core Services:
+
+#### 1. BotManager (`src/services/bot-manager.ts`)
+- Central orchestrator managing the entire bot lifecycle
+- Handles bot creation, activation, deactivation, and deletion
+- Manages WebSocket connections and price monitoring
+- Evaluates trading strategies and executes trades
+- Implements retry logic with cooldown periods after failures
+
+#### 2. OpenAI Service (`src/services/openai.ts`)
+- Generates trading bot code using OpenAI o3-mini model
+- Converts natural language prompts into executable TypeScript code
+- Extracts trading strategies from user descriptions
+- Optimizes strategies based on performance data
+
+#### 3. Hyperliquid WebSocket Service (`src/services/hyperliquid.ts`)
+- Connects to Hyperliquid for real-time trade data
+- Handles reconnection logic and subscription management
+- Supports both mainnet and testnet environments
+- Processes trade messages and emits price updates
+
+#### 4. NEAR Intents Service (`src/services/near-intents.ts`)
+- Executes cross-chain swaps via NEAR Intents API
+- Validates swap configurations
+- Handles API communication with proper error handling
+- Supports multiple blockchains (BASE, ARB, ETH, OP, POL, BSC, AVAX)
+
+#### 5. Vercel Deploy Service (`src/services/vercel-deploy.ts`)
+- Automatically deploys generated bots to Vercel
+- Creates serverless functions with environment variables
+- Manages deployment lifecycle (create, status, delete)
+- Validates Vercel API tokens
+
+#### 6. Storage Service (`src/services/storage.ts`)
+- Persists bot configurations and execution logs to JSON files
+- Handles data serialization/deserialization
+- Manages bot state persistence across server restarts
+
+## 🔄 Complete Data Flow
+
+### 1. Bot Creation Process:
+```
+User Request → API Route → BotManager.createBot() → OpenAI Code Generation → Vercel Deployment → Bot Storage
+```
+
+1. User sends a POST request with bot name, prompt, and swap configuration
+2. `BotManager` validates the swap configuration via NEAR Intents
+3. `OpenAI Service` generates custom trading code based on the user prompt
+4. `Vercel Deploy Service` packages and deploys the bot as a serverless function
+5. Bot configuration is stored locally via `Storage Service`
+
+### 2. Bot Activation & Trading:
+```
+Bot Activation → WebSocket Connection → Price Monitoring → Strategy Evaluation → Trade Execution → Logging
+```
+
+1. When activated, bot establishes Hyperliquid WebSocket connection
+2. Real-time trade data triggers price update events
+3. `BotManager` evaluates trading conditions based on bot's strategy
+4. If conditions are met, executes swap via NEAR Intents API
+5. All actions are logged with success/failure status and cooldown management
+
+### 3. Strategy Types Supported:
+
+#### Price Threshold Strategy:
+```typescript
+if (currentPrice <= buyThreshold) execute('buy')
+if (currentPrice >= sellThreshold) execute('sell')
+```
+
+#### Price Range Strategy:
+```typescript
+if (currentPrice <= minPrice) execute('buy')
+if (currentPrice >= maxPrice) execute('sell')
+```
+
+#### Interval Strategy:
+```typescript
+if (timeSinceLastExecution >= interval) execute('buy')
+```
+
+#### Custom Strategy:
+Uses AI to implement complex logic based on user prompts
+
+## 🛠️ Configuration & Environment
+
+### Required Environment Variables:
+```env
+OPENAI_API_KEY=sk-proj-your-openai-key-here
+VERCEL_TOKEN=your-vercel-token-here
+NEAR_INTENTS_API_URL=https://near-api-4kbh.onrender.com
+IS_TESTNET=false
+PORT=3000
+```
+
+## 🚀 Deployment Architecture
+
+### Main API Server:
+- Runs on Node.js/Express
+- Can be deployed to Vercel, Render, or any cloud platform
+- Handles bot management and orchestration
+
+### Individual Bot Deployments:
+- Each bot becomes an independent Vercel serverless function
+- Contains generated trading logic specific to user requirements
+- Monitors prices and executes trades autonomously
+- Can be controlled via main API
+
+## 🔒 Security & Error Handling
+
+### Security Features:
+- API key validation for all external services
+- Private key validation for blockchain transactions
+- Test mode support for safe development
+- Input validation and sanitization
+
+### Error Handling:
+- Comprehensive try-catch blocks throughout
+- Automatic retry logic with exponential backoff
+- Cooldown periods after failed trades
+- Detailed logging for debugging
+
+### Monitoring:
+- Real-time bot status tracking
+- Trade execution logging
+- Performance metrics collection
+- Health checks for all services
 
 ## Features
 
 - 🤖 **AI Bot Generation**: Uses OpenAI o3-mini to generate custom trading bot code based on user prompts
-- 📊 **Real-time Price Monitoring**: Connects to Mobula WebSocket for live token price data
+- 📊 **Real-time Price Monitoring**: Connects to Hyperliquid WebSocket for live token price data
 - 🔄 **Cross-chain Trading**: Executes swaps via NEAR Intents API across multiple blockchains
 - ☁️ **Auto-deployment**: Automatically deploys generated bots to Vercel as serverless functions
 - 🎯 **Smart Strategies**: Supports price thresholds, ranges, intervals, and custom trading logic
@@ -29,8 +178,8 @@ Edit `.env` with your API keys:
 ```env
 OPENAI_API_KEY=sk-proj-your-openai-key-here
 VERCEL_TOKEN=your-vercel-token-here
-MOBULA_API_KEY=your-mobula-api-key-here
-TARGET_TOKEN_ID=e26c7e73-d918-44d9-9de3-7cbe55b63b99
+NEAR_INTENTS_API_URL=https://near-api-4kbh.onrender.com
+IS_TESTNET=false
 ```
 
 ### 2. Build and Run
@@ -218,7 +367,7 @@ The API supports several trading strategy types:
 └─────────────────┘    └──────────────────┘    └─────────────────┘
                                                          │
 ┌─────────────────┐    ┌──────────────────┐             │
-│ Mobula WebSocket│───▶│  Price Monitoring│◀────────────┘
+│Hyperliquid WS   │───▶│  Price Monitoring│◀────────────┘
 └─────────────────┘    └──────────────────┘
                                 │
                                 ▼
@@ -252,7 +401,7 @@ curl -X POST http://localhost:3000/api/bots \
 2. **API Keys**: Store all API keys securely and rotate them regularly.
 3. **Test Mode**: Always test with `isTest: true` before live trading.
 4. **Validation**: The API validates all inputs but additional validation is recommended.
-5. **Rate Limits**: Be aware of rate limits on OpenAI, Mobula, and Vercel APIs.
+5. **Rate Limits**: Be aware of rate limits on OpenAI, Hyperliquid, and Vercel APIs.
 
 ## Deployment to Vercel
 
