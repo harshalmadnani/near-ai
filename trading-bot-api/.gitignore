@@ -95,3 +95,10 @@ Thumbs.db
 # Logs
 logs
 *.log
+
+# Sensitive data files
+data/bots.json
+data/bots.json.backup
+test-bot-*.json
+**/private-keys/**
+**/*private-key*
