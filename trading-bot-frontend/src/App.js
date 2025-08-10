@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ethers } from 'ethers';
 import axios from 'axios';
 import QRCode from 'react-qr-code';
 import './App.css';
 
-const API_BASE_URL = 'https://near-ai.onrender.com';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://near-ai.onrender.com';
 
 const NETWORKS = {
   BASE: { name: 'Base', symbol: 'ETH' },
@@ -164,7 +164,7 @@ function App() {
   };
 
   // Mobula API functions
-  const fetchWalletPortfolio = async (walletAddress) => {
+  const fetchWalletPortfolio = useCallback(async (walletAddress) => {
     if (!walletAddress || walletPortfolios[walletAddress]) return;
     
     setLoadingPortfolio(true);
@@ -174,7 +174,7 @@ function App() {
           wallet: walletAddress,
         },
         headers: {
-          'Authorization': 'e26c7e73-d918-44d9-9de3-7cbe55b63b99'
+          'Authorization': process.env.REACT_APP_MOBULA_TOKEN || 'YOUR_MOBULA_TOKEN_HERE'
         }
       });
       
@@ -189,9 +189,9 @@ function App() {
     } finally {
       setLoadingPortfolio(false);
     }
-  };
+  }, [walletPortfolios]);
 
-  const fetchWalletTransactions = async (walletAddress, limit = 50) => {
+  const fetchWalletTransactions = useCallback(async (walletAddress, limit = 50) => {
     if (!walletAddress) return;
     
     try {
@@ -202,7 +202,7 @@ function App() {
           order: 'desc'
         },
         headers: {
-          'Authorization': 'e26c7e73-d918-44d9-9de3-7cbe55b63b99'
+          'Authorization': process.env.REACT_APP_MOBULA_TOKEN || 'YOUR_MOBULA_TOKEN_HERE'
         }
       });
       
@@ -215,7 +215,7 @@ function App() {
     } catch (err) {
       console.error('Failed to fetch wallet transactions:', err);
     }
-  };
+  }, []);
 
   // Deploy bot to API
   const deployBot = async () => {
@@ -352,7 +352,7 @@ function App() {
         }
       });
     }
-  }, [activeTab, deployedBots]);
+  }, [activeTab, deployedBots, fetchWalletPortfolio, fetchWalletTransactions]);
 
   const renderWalletStep = () => (
     <div className="step-container">
@@ -934,7 +934,6 @@ function App() {
 // Enhanced Agent Card Component with Mobula Integration
 const AgentCard = ({ bot, portfolio, transactions, onActivate, onDeactivate, onFetchLogs, loadingPortfolio }) => {
   const [logs, setLogs] = useState([]);
-  const [showLogs, setShowLogs] = useState(false);
   const [activeView, setActiveView] = useState('overview'); // 'overview', 'portfolio', 'transactions', 'logs'
 
   const loadLogs = async () => {
