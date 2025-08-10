@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: trading-bot-api
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: node enhanced-server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/health
