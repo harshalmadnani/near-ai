@@ -553,12 +553,6 @@ function App() {
           </label>
         </div>
 
-        <div className="config-preview">
-          <h4>📋 Configuration Preview:</h4>
-          <pre>{JSON.stringify(botConfig, null, 2)}</pre>
-        </div>
-
-
       </div>
     </div>
   );
@@ -763,6 +757,18 @@ function App() {
           <div className="summary-item">
             <span className="label">Mode:</span>
             <span className="value">{botConfig.isTest ? '🧪 Test Mode' : '💰 Live Trading'}</span>
+          </div>
+        </div>
+
+        <div className="funding-reminder">
+          <div className="reminder-icon">💰</div>
+          <div className="reminder-content">
+            <h4>⚠️ Important: Fund Your Bot Wallet Before Launching</h4>
+            <p>
+              Make sure your wallet ({wallet?.address?.slice(0, 6)}...{wallet?.address?.slice(-4)}) 
+              has sufficient {botConfig.originSymbol} tokens and gas fees before deploying. 
+              Your bot needs at least <strong>{botConfig.amount} {botConfig.originSymbol}</strong> plus extra for gas fees.
+            </p>
           </div>
         </div>
 

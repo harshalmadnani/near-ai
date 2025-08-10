@@ -175,10 +175,10 @@ Endpoints:
 
 #### **1. Generate Wallet**
 ```
-Generated Wallet:
+Generated Wallet (EXAMPLE - NOT REAL):
 Address: 0x742d35Cc6634C0532925a3b8D71d5D3edd5e3b8A
-Private Key: 0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d
-Mnemonic: abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
+Private Key: 0x0000000000000000000000000000000000000000000000000000000000000000
+Mnemonic: [EXAMPLE - GENERATE YOUR OWN SECURE MNEMONIC]
 ```
 
 #### **2. Configure Bot**
