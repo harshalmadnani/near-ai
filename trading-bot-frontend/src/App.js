@@ -16,11 +16,22 @@ const NETWORKS = {
   OPTIMISM: { name: 'Optimism', symbol: 'ETH' }
 };
 
-const COINS = ['ETH', 'USDC', 'USDT', 'DAI', 'BTC', 'WETH'];
+const COINS = ['ETH', 'USDC', 'USDT', 'DAI', 'BTC', 'WETH', 'POL', 'AVAX', 'ARB'];
 
 const BOT_EXAMPLES = [
   {
-    name: "ETH Micro Seller",
+    name: "POL DCA Bot",
+    prompt: "Create a dollar-cost averaging bot that buys POL using 1 USDC every minute. This provides consistent POL accumulation through regular small purchases.",
+    config: {
+      originSymbol: "USDC",
+      originBlockchain: "POLYGON",
+      destinationSymbol: "POL",
+      destinationBlockchain: "POLYGON",
+      amount: "1.0"
+    }
+  },
+  {
+    name: "ETH Micro Sell Bot",
     prompt: "Create a precise trading bot that sells exactly 0.0002 ETH on Base for USDC every minute. This is a micro-selling strategy for consistent ETH liquidation.",
     config: {
       originSymbol: "ETH",
@@ -31,58 +42,25 @@ const BOT_EXAMPLES = [
     }
   },
   {
-    name: "DCA ETH Buyer",
-    prompt: "Create a dollar-cost averaging bot that buys ETH with USDC every hour when ETH price is below $4000. This helps accumulate ETH during dips.",
+    name: "AVAX Master",
+    prompt: "Create a smart AVAX trading bot that sells AVAX if it's up 2% and buys if it's down 2% in the past 24 hours. This captures short-term price movements efficiently.",
     config: {
-      originSymbol: "USDC",
-      originBlockchain: "BASE",
-      destinationSymbol: "ETH",
-      destinationBlockchain: "BASE",
-      amount: "5.0"
-    }
-  },
-  {
-    name: "Multi-Chain Arbitrage",
-    prompt: "Create an arbitrage bot that monitors USDC price differences between Polygon and Base, executing swaps when profitable opportunities arise.",
-    config: {
-      originSymbol: "USDC",
-      originBlockchain: "POLYGON",
+      originSymbol: "AVAX",
+      originBlockchain: "AVAX",
       destinationSymbol: "USDC",
-      destinationBlockchain: "BASE",
-      amount: "10.0"
+      destinationBlockchain: "AVAX",
+      amount: "1.0"
     }
   },
   {
-    name: "BTC Profit Taker",
-    prompt: "Create a profit-taking bot that sells small amounts of BTC when price increases by 5% from purchase price. Helps lock in gains systematically.",
-    config: {
-      originSymbol: "BTC",
-      originBlockchain: "ETHEREUM",
-      destinationSymbol: "USDT",
-      destinationBlockchain: "ETHEREUM",
-      amount: "0.001"
-    }
-  },
-  {
-    name: "Stablecoin Optimizer",
-    prompt: "Create a yield optimization bot that swaps between USDC, USDT, and DAI to find the best yield opportunities across different protocols.",
+    name: "ARB Range Trader",
+    prompt: "Create a range trading bot that buys 10 ARB every time its price is below $0.50 and sells when above $0.50 using USDC. Perfect for capturing price oscillations.",
     config: {
       originSymbol: "USDC",
-      originBlockchain: "ETHEREUM",
-      destinationSymbol: "DAI",
-      destinationBlockchain: "ETHEREUM",
-      amount: "100.0"
-    }
-  },
-  {
-    name: "Layer 2 Bridge Bot",
-    prompt: "Create an automated bridge bot that moves ETH from Ethereum mainnet to Arbitrum when gas fees are low, optimizing for cost efficiency.",
-    config: {
-      originSymbol: "ETH",
-      originBlockchain: "ETHEREUM",
-      destinationSymbol: "ETH",
+      originBlockchain: "ARBITRUM",
+      destinationSymbol: "ARB",
       destinationBlockchain: "ARBITRUM",
-      amount: "0.1"
+      amount: "5.0"
     }
   }
 ];
@@ -469,7 +447,7 @@ function App() {
             type="text"
             value={botConfig.name}
             onChange={(e) => setBotConfig({...botConfig, name: e.target.value})}
-            placeholder="e.g., ETH Micro Sell Bot"
+            placeholder="e.g., POL DCA Bot"
           />
         </div>
 
