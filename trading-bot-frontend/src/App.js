@@ -842,8 +842,8 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>🤖 AI Trading Bot Platform</h1>
-        <p>Deploy automated trading bots across multiple EVM networks</p>
+        <h1>ZapBots</h1>
+        <p>Deploy automated omnichain trading bots across multiple EVM networks in under 2 minutes</p>
         
         {/* Tab Selector */}
         <div className="tab-selector">
