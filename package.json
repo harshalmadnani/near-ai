@@ -11,7 +11,9 @@
     "swapAPI": "ts-node 1click-example/swap-api.ts",
     "startServer": "ts-node 1click-example/swap-server.ts",
     "server": "ts-node 1click-example/swap-server.ts",
-    "build": "tsc",
+    "build": "cd trading-bot-frontend && npm run build",
+    "build:frontend": "cd trading-bot-frontend && CI=false npm run build",
+    "install:frontend": "cd trading-bot-frontend && npm install",
     "start": "node dist/1click-example/swap-server.js",
     "start:server": "ts-node 1click-example/swap-server.ts",
     "dev": "ts-node 1click-example/swap-server.ts"

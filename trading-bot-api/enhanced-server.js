@@ -5,8 +5,21 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
+// Production security middleware
+if (process.env.NODE_ENV === 'production') {
+  // Restrict CORS to specific origins in production
+  const allowedOrigins = process.env.ALLOWED_ORIGINS ? 
+    process.env.ALLOWED_ORIGINS.split(',') : ['https://yourdomain.com'];
+  
+  app.use(cors({
+    origin: allowedOrigins,
+    credentials: true
+  }));
+} else {
+  // Allow all origins in development
+  app.use(cors());
+}
+
 app.use(express.json({ limit: '10mb' }));
 
 // In-memory storage for bots
