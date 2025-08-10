@@ -1,0 +1,16 @@
+{
+  "name": "Test Price Alert Bot",
+  "prompt": "Create a simple bot that monitors the target token price and logs when it goes above $0.50. This is just a test bot to verify the system works.",
+  "targetCoin": "ETH",
+  "swapConfig": {
+    "senderAddress": "0x1234567890123456789012345678901234567890",
+    "senderPrivateKey": "0x1234567890123456789012345678901234567890123456789012345678901234",
+    "recipientAddress": "0x1234567890123456789012345678901234567890",
+    "originSymbol": "USDC",
+    "originBlockchain": "BASE",
+    "destinationSymbol": "ARB",
+    "destinationBlockchain": "ARB",
+    "amount": "1.0",
+    "isTest": true
+  }
+}

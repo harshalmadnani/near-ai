@@ -1,0 +1,115 @@
+[
+  {
+    "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+    "logs": [
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:03.617Z",
+        "action": "buy",
+        "price": 4223.3,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000a5fccc6d614d85ffb4148fe8e96cbe7830affde000000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:03.714Z",
+        "action": "buy",
+        "price": 4223.2,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: Bad Request - Invalid input data"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.003Z",
+        "action": "buy",
+        "price": 4223.2,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000402d4b70c67351415637da41acd765b93880088700000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.165Z",
+        "action": "buy",
+        "price": 4223.3,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000dc8780c36a29fddf043c11c54e24f921685a2d5200000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.593Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000272b01efaf38a7d98e2dd31a865a4fda5805745500000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.659Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000bd0b6d62a0654c4a2ea0a4218884ff46dff2ba0800000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.659Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000044e20fd8e5e0e5099f373dfba42d72d5292d8d800000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.836Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000bcf25135e187a104d57b9b1e48f9ee2391dbf00e00000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:05.847Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000fe3239d0c50e669f8a88dc21a2f5a9c6be0798e000000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:06.158Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb0000000000000000000000009bdf8c9e043eb236bc2dae818629b3c987e00fbb00000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:07.060Z",
+        "action": "buy",
+        "price": 4223.6,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000c5eb41090fa45af53315e40fdd0ec10458e6185f00000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      },
+      {
+        "botId": "1f4f3f58-1619-43b2-a5d7-aa205cb39e76",
+        "timestamp": "2025-08-10T10:22:07.205Z",
+        "action": "buy",
+        "price": 4223.5,
+        "amount": "1.0",
+        "success": false,
+        "error": "API Error: execution reverted: \"ERC20: transfer amount exceeds balance\" (action=\"estimateGas\", data=\"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\", reason=\"ERC20: transfer amount exceeds balance\", transaction={ \"data\": \"0xa9059cbb000000000000000000000000c7096288d4a1e65994fb57f070e07b1a970122cd00000000000000000000000000000000000000000000000000000000000f4240\", \"from\": \"0xfeBd627aa26140E24F34cB767507353F17eFD351\", \"to\": \"0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359\" }, invocation=null, revert={ \"args\": [ \"ERC20: transfer amount exceeds balance\" ], \"name\": \"Error\", \"signature\": \"Error(string)\" }, code=CALL_EXCEPTION, version=6.15.0)"
+      }
+    ]
+  }
+]

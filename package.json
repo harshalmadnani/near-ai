@@ -1,0 +1,38 @@
+{
+  "name": "near-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "getTokens": "ts-node 1click-example/1-get-tokens.ts",
+    "getQuote": "ts-node 1click-example/2-get-quote.ts",
+    "sendDeposit": "ts-node 1click-example/3-send-deposit.ts",
+    "checkStatus": "ts-node 1click-example/4-check-status.ts",
+    "fullSwap": "ts-node 1click-example/5-full-swap.ts",
+    "swapAPI": "ts-node 1click-example/swap-api.ts",
+    "startServer": "ts-node 1click-example/swap-server.ts",
+    "server": "ts-node 1click-example/swap-server.ts",
+    "build": "tsc",
+    "start": "node dist/1click-example/swap-server.js",
+    "start:server": "ts-node 1click-example/swap-server.ts",
+    "dev": "ts-node 1click-example/swap-server.ts"
+  },
+  "dependencies": {
+    "@defuse-protocol/one-click-sdk-typescript": "0.1.1",
+    "@near-js/accounts": "^2.2.4",
+    "@near-js/crypto": "^2.2.4",
+    "@near-js/providers": "^2.2.4",
+    "@near-js/signers": "^2.2.4",
+    "@near-js/tokens": "^2.2.4",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^20.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "ethers": "^6.15.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
+}
