@@ -11,6 +11,6 @@
     "destinationSymbol": "ARB",
     "destinationBlockchain": "ARB",
     "amount": "1.0",
-    "isTest": true
+    "isTest": false
   }
 }
