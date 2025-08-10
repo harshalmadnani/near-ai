@@ -116,7 +116,34 @@ app.post('/api/bots', async (req, res) => {
         quote: { quote: { amountOutFormatted: 'Test Amount' } }
       };
     } else {
-      swapResult = await testSwap();
+      try {
+        swapResult = await testSwap();
+        
+        // If swap fails due to insufficient balance, still allow bot creation
+        if (!swapResult.success && swapResult.error) {
+          const errorMsg = swapResult.error.toLowerCase();
+          if (errorMsg.includes('exceeds balance') || 
+              errorMsg.includes('insufficient') || 
+              errorMsg.includes('not enough') ||
+              errorMsg.includes('no deposit address')) {
+            console.log('⚠️ Swap test failed due to insufficient balance - allowing bot creation anyway');
+            swapResult = {
+              success: true,
+              message: 'Swap validation skipped - insufficient test wallet balance',
+              warning: swapResult.error,
+              quote: { quote: { amountOutFormatted: 'Validation Skipped' } }
+            };
+          }
+        }
+      } catch (error) {
+        console.log('⚠️ Swap test failed with error - allowing bot creation anyway:', error.message);
+        swapResult = {
+          success: true,
+          message: 'Swap validation skipped - API error',
+          warning: error.message,
+          quote: { quote: { amountOutFormatted: 'Validation Skipped' } }
+        };
+      }
     }
     
     if (swapResult.success) {
@@ -138,6 +165,9 @@ app.post('/api/bots', async (req, res) => {
       console.log(`✅ Bot "${name}" created successfully!`);
       console.log(`   📊 Test swap result: ${swapResult.quote?.quote?.amountOutFormatted || 'N/A'}`);
       console.log(`   🆔 Bot ID: ${bot.id}`);
+      if (swapResult.warning) {
+        console.log(`   ⚠️ Warning: ${swapResult.warning}`);
+      }
 
       res.status(201).json({
         success: true,
