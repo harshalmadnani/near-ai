@@ -12,7 +12,7 @@ const NETWORKS = {
   BNB: { name: 'BNB Smart Chain', symbol: 'BNB' },
   AVAX: { name: 'Avalanche', symbol: 'AVAX' },
   ARBITRUM: { name: 'Arbitrum', symbol: 'ETH' },
-  POL: { name: 'Polygon', symbol: 'POL' },
+  POLYGON: { name: 'Polygon', symbol: 'MATIC' },
   OPTIMISM: { name: 'Optimism', symbol: 'ETH' }
 };
 
@@ -24,9 +24,9 @@ const BOT_EXAMPLES = [
     prompt: "Create a dollar-cost averaging bot that buys POL using 1 USDC every minute. This provides consistent POL accumulation through regular small purchases.",
     config: {
       originSymbol: "USDC",
-      originBlockchain: "POL",
+      originBlockchain: "POLYGON",
       destinationSymbol: "POL",
-      destinationBlockchain: "POL",
+      destinationBlockchain: "POLYGON",
       amount: "1.0"
     }
   },
